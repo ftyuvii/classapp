@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ClassHub — BCA Classroom</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =========================================================
+       SCREEN 1: LOGIN
+  ========================================================== -->
+  <section id="login-screen" class="screen">
+    <div class="login-card">
+      <div class="brand">
+        <span class="brand-mark">CH</span>
+        <span class="brand-name">ClassHub</span>
+      </div>
+
+      <h1 class="login-heading">Welcome back</h1>
+      <p class="login-subtitle">Continue to your classroom</p>
+
+      <button id="google-signin-btn" class="btn-primary">
+        <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+          <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84c-.21 1.13-.85 2.09-1.81 2.73v2.27h2.93c1.71-1.58 2.68-3.9 2.68-6.64z"/>
+          <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.17l-2.93-2.27c-.81.54-1.85.86-3.03.86-2.33 0-4.31-1.57-5.02-3.68H.96v2.34C2.44 15.98 5.48 18 9 18z"/>
+          <path fill="#FBBC05" d="M3.98 10.74A5.4 5.4 0 0 1 3.68 9c0-.6.1-1.19.3-1.74V4.92H.96A8.99 8.99 0 0 0 0 9c0 1.45.35 2.83.96 4.08l3.02-2.34z"/>
+          <path fill="#EA4335" d="M9 3.58c1.32 0 2.51.45 3.44 1.35l2.59-2.59C13.46.89 11.43 0 9 0 5.48 0 2.44 2.02.96 4.92l3.02 2.34C4.69 5.15 6.67 3.58 9 3.58z"/>
+        </svg>
+        <span>Continue as a Student</span>
+      </button>
+
+      <button id="show-teacher-login" class="teacher-link">Teacher / Admin Login</button>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SCREEN 2: TEACHER / ADMIN LOGIN (hidden panel)
+  ========================================================== -->
+  <section id="teacher-screen" class="screen hidden">
+    <div class="login-card">
+      <button id="back-to-student" class="back-link" aria-label="Back">← Back</button>
+
+      <div class="brand">
+        <span class="brand-mark">CH</span>
+        <span class="brand-name">ClassHub</span>
+      </div>
+
+      <h1 class="login-heading">Teacher sign in</h1>
+      <p class="login-subtitle">For faculty and admin use only</p>
+
+      <form id="teacher-login-form" class="teacher-form">
+        <label for="teacher-email">Email</label>
+        <input type="email" id="teacher-email" placeholder="admin@dav.in" required autocomplete="username" />
+
+        <label for="teacher-password">Password</label>
+        <input type="password" id="teacher-password" placeholder="••••••••" required autocomplete="current-password" />
+
+        <p id="teacher-error" class="error-text hidden">Incorrect email or password.</p>
+
+        <button type="submit" class="btn-primary">Sign in</button>
+      </form>
+
+      <p class="demo-note">Demo credentials for development only — not a secure login method.</p>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SCREEN 3: STUDENT ONBOARDING (first login only)
+  ========================================================== -->
+  <section id="onboarding-screen" class="screen hidden">
+    <div class="login-card">
+      <div class="brand">
+        <span class="brand-mark">CH</span>
+        <span class="brand-name">ClassHub</span>
+      </div>
+
+      <h1 class="login-heading">Welcome to ClassHub</h1>
+      <p class="login-subtitle">Select your classroom to continue</p>
+
+      <div class="classroom-card">
+        <div class="classroom-name">BCA — FCA1</div>
+        <div class="classroom-meta">Session 2026–27</div>
+        <div class="classroom-meta">DAV College, Jalandhar</div>
+      </div>
+
+      <button id="join-classroom-btn" class="btn-primary">Join Classroom</button>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       SCREEN 4: STUDENT DASHBOARD
+  ========================================================== -->
+  <section id="student-dashboard" class="screen hidden">
+    <header class="app-header">
+      <div class="header-left">
+        <span class="brand-mark small">CH</span>
+        <span class="brand-name">ClassHub</span>
+        <span class="session-pill" id="session-pill">BCA · FCA1 · 2026–27</span>
+      </div>
+
+      <div class="header-right">
+        <div class="profile-trigger" id="profile-trigger">
+          <img id="header-avatar" class="avatar" src="" alt="Profile picture" />
+          <span id="header-name" class="header-name"></span>
+          <svg class="chevron" width="12" height="12" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div id="profile-menu" class="profile-menu hidden">
+          <div class="profile-menu-header">
+            <img id="menu-avatar" class="avatar large" src="" alt="Profile picture" />
+            <div>
+              <div id="menu-name" class="menu-name"></div>
+              <div id="menu-email" class="menu-email"></div>
+            </div>
+          </div>
+          <button id="view-profile-btn" class="profile-menu-item">View profile</button>
+          <button id="logout-btn" class="profile-menu-item danger">Log out</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="dashboard-main">
+      <h2 id="greeting" class="greeting">Good morning</h2>
+      <p class="class-line" id="class-line">BCA • FCA1 • 2026–27</p>
+
+      <div class="card-grid">
+        <div class="feature-card">
+          <div class="card-icon">📘</div>
+          <div class="card-title">Notes</div>
+          <div class="card-desc">Class notes and study material</div>
+          <span class="card-badge">Coming soon</span>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon">📝</div>
+          <div class="card-title">Assignments</div>
+          <div class="card-desc">Tests and submissions</div>
+          <span class="card-badge">Coming soon</span>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon">✅</div>
+          <div class="card-title">Attendance</div>
+          <div class="card-desc">Track your attendance</div>
+          <span class="card-badge">Coming soon</span>
+        </div>
+        <div class="feature-card">
+          <div class="card-icon">🗓️</div>
+          <div class="card-title">Schedule</div>
+          <div class="card-desc">Coming soon</div>
+          <span class="card-badge">Coming soon</span>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- =========================================================
+       SCREEN 5: STUDENT PROFILE PAGE
+  ========================================================== -->
+  <section id="profile-screen" class="screen hidden">
+    <header class="app-header">
+      <div class="header-left">
+        <button id="profile-back-btn" class="back-link inline">← Back to dashboard</button>
+      </div>
+    </header>
+
+    <main class="profile-main">
+      <div class="profile-card">
+        <img id="profile-photo" class="avatar xlarge" src="" alt="Profile picture" />
+        <h2 id="profile-name" class="profile-name"></h2>
+        <p id="profile-email" class="profile-email"></p>
+
+        <div class="profile-details">
+          <div class="detail-row"><span>Student UID</span><span id="profile-uid"></span></div>
+          <div class="detail-row"><span>Class</span><span id="profile-class"></span></div>
+          <div class="detail-row"><span>Section</span><span id="profile-section"></span></div>
+          <div class="detail-row"><span>Session</span><span id="profile-session"></span></div>
+          <div class="detail-row"><span>College</span><span id="profile-college"></span></div>
+          <div class="detail-row"><span>Roll Number</span><span id="profile-roll"></span></div>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- =========================================================
+       SCREEN 6: TEACHER DASHBOARD (placeholder)
+  ========================================================== -->
+  <section id="teacher-dashboard" class="screen hidden">
+    <header class="app-header">
+      <div class="header-left">
+        <span class="brand-mark small">CH</span>
+        <span class="brand-name">ClassHub</span>
+      </div>
+      <div class="header-right">
+        <span class="teacher-name-tag">DAV Teacher</span>
+        <button id="teacher-logout-btn" class="btn-secondary small">Log out</button>
+      </div>
+    </header>
+
+    <main class="dashboard-main">
+      <h2 class="greeting">Teacher Dashboard</h2>
+      <p class="class-line">Placeholder — modules coming in a later phase</p>
+
+      <div class="card-grid">
+        <div class="feature-card"><div class="card-icon">📘</div><div class="card-title">Notes</div><span class="card-badge">Coming soon</span></div>
+        <div class="feature-card"><div class="card-icon">📝</div><div class="card-title">Assignments</div><span class="card-badge">Coming soon</span></div>
+        <div class="feature-card"><div class="card-icon">✅</div><div class="card-title">Attendance</div><span class="card-badge">Coming soon</span></div>
+        <div class="feature-card"><div class="card-icon">👥</div><div class="card-title">Students</div><span class="card-badge">Coming soon</span></div>
+      </div>
+    </main>
+  </section>
+
+  <!-- Firebase SDKs (compat build — simplest for beginners) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
