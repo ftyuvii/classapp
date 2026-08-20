@@ -1,0 +1,19 @@
+{
+  "name": "ClassApp",
+  "short_name": "ClassApp",
+  "description": "BCA Class Mgms - Manage your class",
+  "start_url": "https://ftyuvii.github.io/classapp/",
+  "scope": "https://ftyuvii.github.io/classapp/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
